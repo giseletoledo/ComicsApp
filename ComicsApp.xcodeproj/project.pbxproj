@@ -13,6 +13,10 @@
 		C15D2BC92C4C380100CF45A1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C15D2BC82C4C380100CF45A1 /* Base */; };
 		C15D2BCB2C4C380500CF45A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C15D2BCA2C4C380500CF45A1 /* Assets.xcassets */; };
 		C15D2BCE2C4C380500CF45A1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C15D2BCD2C4C380500CF45A1 /* Base */; };
+		C15D2BD72C4C4AFC00CF45A1 /* Comic.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BD62C4C4AFC00CF45A1 /* Comic.swift */; };
+		C15D2BDA2C4C4BA700CF45A1 /* MarvelAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BD92C4C4BA700CF45A1 /* MarvelAPIService.swift */; };
+		C15D2BDF2C4CA2A600CF45A1 /* DetailComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */; };
+		C15D2BE12C4CA59B00CF45A1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		C15D2BCA2C4C380500CF45A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C15D2BCD2C4C380500CF45A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C15D2BCF2C4C380500CF45A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C15D2BD62C4C4AFC00CF45A1 /* Comic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comic.swift; sourceTree = "<group>"; };
+		C15D2BD92C4C4BA700CF45A1 /* MarvelAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIService.swift; sourceTree = "<group>"; };
+		C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComicsViewController.swift; sourceTree = "<group>"; };
+		C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,43 @@
 		C15D2BC02C4C380100CF45A1 /* ComicsApp */ = {
 			isa = PBXGroup;
 			children = (
+				C15D2BDB2C4C4E7900CF45A1 /* ViewControllers */,
+				C15D2BD82C4C4B5F00CF45A1 /* Model */,
+				C15D2BD52C4C4AB500CF45A1 /* Services */,
 				C15D2BC12C4C380100CF45A1 /* AppDelegate.swift */,
 				C15D2BC32C4C380100CF45A1 /* SceneDelegate.swift */,
-				C15D2BC52C4C380100CF45A1 /* ViewController.swift */,
 				C15D2BC72C4C380100CF45A1 /* Main.storyboard */,
 				C15D2BCA2C4C380500CF45A1 /* Assets.xcassets */,
 				C15D2BCC2C4C380500CF45A1 /* LaunchScreen.storyboard */,
 				C15D2BCF2C4C380500CF45A1 /* Info.plist */,
+				C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */,
 			);
 			path = ComicsApp;
+			sourceTree = "<group>";
+		};
+		C15D2BD52C4C4AB500CF45A1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C15D2BD92C4C4BA700CF45A1 /* MarvelAPIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C15D2BD82C4C4B5F00CF45A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C15D2BD62C4C4AFC00CF45A1 /* Comic.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C15D2BDB2C4C4E7900CF45A1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C15D2BC52C4C380100CF45A1 /* ViewController.swift */,
+				C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +174,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C15D2BDF2C4CA2A600CF45A1 /* DetailComicsViewController.swift in Sources */,
+				C15D2BE12C4CA59B00CF45A1 /* UIImageView+Extensions.swift in Sources */,
+				C15D2BDA2C4C4BA700CF45A1 /* MarvelAPIService.swift in Sources */,
 				C15D2BC62C4C380100CF45A1 /* ViewController.swift in Sources */,
+				C15D2BD72C4C4AFC00CF45A1 /* Comic.swift in Sources */,
 				C15D2BC22C4C380100CF45A1 /* AppDelegate.swift in Sources */,
 				C15D2BC42C4C380100CF45A1 /* SceneDelegate.swift in Sources */,
 			);
