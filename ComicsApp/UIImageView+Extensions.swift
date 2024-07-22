@@ -19,30 +19,20 @@ extension UIImageView {
     }
     
     // Nova função para carregar imagem assincronamente com URLSession
-    func loadImage(from url: URL, placeholder: UIImage? = nil, completion: @escaping (UIImage?) -> Void) {
-           // Set the placeholder image
-           self.image = placeholder
-
-           // Create a data task to load the image
-           let task = URLSession.shared.dataTask(with: url) { [weak self] data, response, error in
-               guard let self = self else { return }
-
-               if let data = data, let image = UIImage(data: data) {
-                   // Update the image on the main thread
-                   DispatchQueue.main.async {
-                       self.image = image
-                       completion(image)
-                   }
-               } else {
-                   // Handle image loading error (optional)
-                   DispatchQueue.main.async {
-                       completion(nil)
-                   }
-               }
-           }
-
-           // Start the data task
-           task.resume()
-       }
+    func loadImage(from url: URL, completion: ((UIImage?) -> Void)? = nil) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data, error == nil, let image = UIImage(data: data) else {
+                    DispatchQueue.main.async {
+                        completion?(nil)
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.image = image
+                    completion?(image)
+                }
+            }
+            task.resume()
+        }
 }
 
