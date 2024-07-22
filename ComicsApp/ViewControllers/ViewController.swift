@@ -49,14 +49,20 @@ class ViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        
         
         setupActivityIndicator()
         fetchComics()
     }
 }
 
+
 extension ViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80 // Ajuste a altura da cell
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "toDetails", sender: indexPath)
@@ -67,7 +73,6 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return comics.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "defaultCell") else {
             print("Failed to dequeue cell")
@@ -75,19 +80,51 @@ extension ViewController: UITableViewDataSource {
         }
         
         let comic = comics[indexPath.row]
-        cell.textLabel?.text = comic.title
-        cell.textLabel?.font = .preferredFont(forTextStyle: .body)
+        
+        // Configura o conteúdo da célula
+        var contentConfig = cell.defaultContentConfiguration()
+        contentConfig.text = comic.title
+        contentConfig.secondaryText = comic.description
+
+        // Define o URL padrão para imagem não disponível
+        let placeholderURL = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
         
         if let thumbnail = comic.thumbnail {
             let urlString = "\(thumbnail.path).\(thumbnail.extension)"
-            if let url = URL(string: urlString) {
-                cell.imageView?.load(url: url)
+            let url = URL(string: urlString) ?? URL(string: placeholderURL)!
+            loadImage(from: url) { image in
+                DispatchQueue.main.async {
+                    var updatedContentConfig = cell.defaultContentConfiguration()
+                    updatedContentConfig.text = comic.title
+                    updatedContentConfig.secondaryText = comic.description
+                    updatedContentConfig.image = image ?? UIImage(named: "placeholderImage")
+                    updatedContentConfig.imageProperties.maximumSize = CGSize(width: 55, height: 75)
+                    updatedContentConfig.imageProperties.reservedLayoutSize = CGSize(width: 55, height: 75)
+                    cell.contentConfiguration = updatedContentConfig
+                }
             }
+        } else {
+            contentConfig.image = UIImage(named: "placeholderImage")
+            contentConfig.imageProperties.maximumSize = CGSize(width: 55, height: 75)
+            contentConfig.imageProperties.reservedLayoutSize = CGSize(width: 55, height: 75)
+            cell.contentConfiguration = contentConfig
         }
-        
+
         print("Configured cell for row \(indexPath.row)")
         return cell
     }
+
+    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil, let image = UIImage(data: data) else {
+                completion(nil)
+                return
+            }
+            completion(image)
+        }
+        task.resume()
+    }
+
 }
 
 extension ViewController {

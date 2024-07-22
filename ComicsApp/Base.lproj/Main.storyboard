@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,32 +12,31 @@
         <!--Comics-->
         <scene sceneID="mq8-iQ-5zX">
             <objects>
-                <viewController id="phl-sd-dZl" customClass="ViewController" customModule="TIC_ConsumoAPI_Template" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="phl-sd-dZl" customClass="ViewController" customModule="ComicsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nyh-wt-i9Y">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-eb-C9G">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="dH0-eb-C9G">
                                 <rect key="frame" x="0.0" y="103" width="393" height="749"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="defaultCell" textLabel="3EP-dH-XUi" imageView="6at-DJ-THE" style="IBUITableViewCellStyleDefault" id="JDk-QE-8tC">
-                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="43.666667938232422"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="defaultCell" textLabel="3EP-dH-XUi" imageView="6at-DJ-THE" style="IBUITableViewCellStyleDefault" id="JDk-QE-8tC">
+                                        <rect key="frame" x="20" y="55.333332061767578" width="353" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JDk-QE-8tC" id="ARC-cm-VSq">
-                                            <rect key="frame" x="0.0" y="0.0" width="353" height="43.666667938232422"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3EP-dH-XUi">
-                                                    <rect key="frame" x="60" y="0.0" width="273" height="43.666667938232422"/>
+                                                    <rect key="frame" x="60" y="0.0" width="273" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="pencil.and.scribble" catalog="system" id="6at-DJ-THE">
-                                                    <rect key="frame" x="19" y="14.333333333333334" width="26" height="17.666666666666668"/>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" image="pencil.and.scribble" catalog="system" id="6at-DJ-THE">
+                                                    <rect key="frame" x="19" y="22.666666666666664" width="26" height="17.666666666666668"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -53,6 +53,10 @@
                             <constraint firstItem="dH0-eb-C9G" firstAttribute="top" secondItem="heq-Zw-Sxa" secondAttribute="top" id="uC6-To-dge"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Comics" id="C8K-TF-2GF">
+                        <imageReference key="image" image="list.dash" catalog="system" symbolScale="medium"/>
+                        <imageReference key="selectedImage" image="list.dash" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
                     <navigationItem key="navigationItem" title="Comics" largeTitleDisplayMode="always" id="vt9-l3-ZHE"/>
                     <connections>
                         <outlet property="tableView" destination="dH0-eb-C9G" id="oBd-og-h9G"/>
@@ -61,7 +65,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tqo-5i-INr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2046.564885496183" y="35.91549295774648"/>
+            <point key="canvasLocation" x="2973.2824427480914" y="35.91549295774648"/>
+        </scene>
+        <!--Favoritos-->
+        <scene sceneID="Ajv-es-oXH">
+            <objects>
+                <viewController title="Favoritos" id="bxU-fI-OPn" customClass="FavoritesViewController" customModule="ComicsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Mth-5u-xmL">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="l8Q-UG-boo">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoritecell" editingAccessoryType="detailDisclosureButton" textLabel="qGU-gt-5XE" imageView="maB-Ne-eno" rowHeight="100" style="IBUITableViewCellStyleDefault" id="tf6-bj-paq" customClass="FavoriteTableViewCell" customModule="ComicsApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tf6-bj-paq" id="vv4-HN-KQL">
+                                            <rect key="frame" x="0.0" y="0.0" width="362.66666666666669" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qGU-gt-5XE">
+                                                    <rect key="frame" x="59" y="0.0" width="295.66666666666669" height="100"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="ellipsis.message" catalog="system" id="maB-Ne-eno">
+                                                    <rect key="frame" x="21.166666666666664" y="40" width="21.666666666666668" height="19.666666666666668"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="thumbnailImageView" destination="maB-Ne-eno" id="Euu-yF-aFN"/>
+                                            <outlet property="titleLabel" destination="qGU-gt-5XE" id="w2V-QB-n83"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="HpF-nJ-qG5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HpF-nJ-qG5" firstAttribute="trailing" secondItem="l8Q-UG-boo" secondAttribute="trailing" id="EJG-Uz-Oj3"/>
+                            <constraint firstItem="l8Q-UG-boo" firstAttribute="top" secondItem="HpF-nJ-qG5" secondAttribute="top" id="TCd-Xd-9Py"/>
+                            <constraint firstItem="HpF-nJ-qG5" firstAttribute="bottom" secondItem="l8Q-UG-boo" secondAttribute="bottom" id="mX1-rl-KG7"/>
+                            <constraint firstItem="l8Q-UG-boo" firstAttribute="leading" secondItem="HpF-nJ-qG5" secondAttribute="leading" id="r4d-P2-528"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favoritos" selectedImage="heart" catalog="system" id="saS-Tq-zL9">
+                        <imageReference key="image" image="heart.fill" catalog="system" symbolScale="medium"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableView" destination="l8Q-UG-boo" id="hya-Jb-WUM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l6v-Fu-S2m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2047" y="785"/>
         </scene>
         <!--Detail Comics View Controller-->
         <scene sceneID="ddd-Qu-9Np">
@@ -137,7 +201,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HtH-XC-2rM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.2977099236641" y="35.91549295774648"/>
+            <point key="canvasLocation" x="3958.0152671755723" y="35.91549295774648"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Gdl-Ea-SGo">
@@ -150,16 +214,39 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="phl-sd-dZl" kind="relationship" relationship="rootViewController" id="ObF-Lm-k5q"/>
+                        <segue destination="DMC-bH-YLH" kind="relationship" relationship="rootViewController" id="ObF-Lm-k5q"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zR-vH-6KI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1119.8473282442749" y="35.91549295774648"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="MqP-Z8-v9h">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="DMC-bH-YLH" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="B7Z-d7-P0w"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="56z-le-lhs">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="phl-sd-dZl" kind="relationship" relationship="viewControllers" id="sUe-1Y-brM"/>
+                        <segue destination="bxU-fI-OPn" kind="relationship" relationship="viewControllers" id="Kap-jg-vvb"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yHh-Yb-bHy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2046.564885496183" y="35.91549295774648"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ellipsis.message" catalog="system" width="128" height="116"/>
         <image name="heart" catalog="system" width="128" height="107"/>
+        <image name="heart.fill" catalog="system" width="128" height="107"/>
+        <image name="list.dash" catalog="system" width="128" height="85"/>
         <image name="pencil.and.scribble" catalog="system" width="128" height="86"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

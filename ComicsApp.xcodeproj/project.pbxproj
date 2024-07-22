@@ -17,6 +17,8 @@
 		C15D2BDA2C4C4BA700CF45A1 /* MarvelAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BD92C4C4BA700CF45A1 /* MarvelAPIService.swift */; };
 		C15D2BDF2C4CA2A600CF45A1 /* DetailComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */; };
 		C15D2BE12C4CA59B00CF45A1 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */; };
+		C15D2BE32C4CBBC400CF45A1 /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BE22C4CBBC400CF45A1 /* FavoriteTableViewCell.swift */; };
+		C15D2BE52C4CBC5A00CF45A1 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C15D2BE42C4CBC5A00CF45A1 /* FavoriteViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		C15D2BD92C4C4BA700CF45A1 /* MarvelAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarvelAPIService.swift; sourceTree = "<group>"; };
 		C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailComicsViewController.swift; sourceTree = "<group>"; };
 		C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		C15D2BE22C4CBBC400CF45A1 /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
+		C15D2BE42C4CBC5A00CF45A1 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,11 +73,12 @@
 				C15D2BD52C4C4AB500CF45A1 /* Services */,
 				C15D2BC12C4C380100CF45A1 /* AppDelegate.swift */,
 				C15D2BC32C4C380100CF45A1 /* SceneDelegate.swift */,
+				C15D2BE22C4CBBC400CF45A1 /* FavoriteTableViewCell.swift */,
+				C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */,
 				C15D2BC72C4C380100CF45A1 /* Main.storyboard */,
 				C15D2BCA2C4C380500CF45A1 /* Assets.xcassets */,
 				C15D2BCC2C4C380500CF45A1 /* LaunchScreen.storyboard */,
 				C15D2BCF2C4C380500CF45A1 /* Info.plist */,
-				C15D2BE02C4CA59A00CF45A1 /* UIImageView+Extensions.swift */,
 			);
 			path = ComicsApp;
 			sourceTree = "<group>";
@@ -99,6 +104,7 @@
 			children = (
 				C15D2BC52C4C380100CF45A1 /* ViewController.swift */,
 				C15D2BDE2C4CA2A600CF45A1 /* DetailComicsViewController.swift */,
+				C15D2BE42C4CBC5A00CF45A1 /* FavoriteViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -175,8 +181,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C15D2BDF2C4CA2A600CF45A1 /* DetailComicsViewController.swift in Sources */,
+				C15D2BE32C4CBBC400CF45A1 /* FavoriteTableViewCell.swift in Sources */,
 				C15D2BE12C4CA59B00CF45A1 /* UIImageView+Extensions.swift in Sources */,
 				C15D2BDA2C4C4BA700CF45A1 /* MarvelAPIService.swift in Sources */,
+				C15D2BE52C4CBC5A00CF45A1 /* FavoriteViewController.swift in Sources */,
 				C15D2BC62C4C380100CF45A1 /* ViewController.swift in Sources */,
 				C15D2BD72C4C4AFC00CF45A1 /* Comic.swift in Sources */,
 				C15D2BC22C4C380100CF45A1 /* AppDelegate.swift in Sources */,
