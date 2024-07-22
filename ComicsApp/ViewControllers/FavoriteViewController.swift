@@ -130,7 +130,9 @@ extension FavoritesViewController: UITableViewDataSource {
             let urlString = "\(thumbnail.path).\(thumbnail.extension)"
             let url = URL(string: urlString) ?? placeholderURL
             
-            loadImage(from: url) { image in
+            let imageView = UIImageView()
+
+            imageView.loadImage(from: url) { image in
                 DispatchQueue.main.async {
                     updateCell(with: image)
                 }
@@ -150,19 +152,5 @@ extension FavoritesViewController: UITableViewDataSource {
 
         return cell
     }
-
-    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data, error == nil, let image = UIImage(data: data) else {
-                completion(nil)
-                return
-            }
-            completion(image)
-        }
-        task.resume()
-    }
-
-
-
 }
 
