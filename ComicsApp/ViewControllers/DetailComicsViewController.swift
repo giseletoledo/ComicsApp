@@ -17,9 +17,12 @@ class DetailComicsViewController: UIViewController {
     @IBOutlet weak var thumbnailImageView: UIImageView!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupActivityIndicator()
     }
     
     private func setupView() {
@@ -29,15 +32,23 @@ class DetailComicsViewController: UIViewController {
         descriptionLabel.text = comic.description ?? "No description available"
         isbnLabel.text = comic.isbn ?? "No ISBN available"
         
+        // Carregar a miniatura com o indicador de carregamento
         if let thumbnail = comic.thumbnail {
             let urlString = "\(thumbnail.path).\(thumbnail.extension)"
             if let url = URL(string: urlString) {
+                showLoading()
                 thumbnailImageView.load(url: url)
+                // Se necessário, esconda o carregador após a imagem ser carregada
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.hideLoading() 
+                }
             } else {
                 thumbnailImageView.image = UIImage(named: "placeholder")
+                hideLoading()
             }
         } else {
             thumbnailImageView.image = UIImage(named: "placeholder")
+            hideLoading()
         }
         
         updateFavoriteButton()
@@ -80,5 +91,18 @@ class DetailComicsViewController: UIViewController {
             UserDefaults.standard.set(favorites, forKey: "favoriteComics")
         }
     }
+    
+    private func setupActivityIndicator() {
+        activityIndicator.center = view.center
+        activityIndicator.hidesWhenStopped = true
+        view.addSubview(activityIndicator)
+    }
+    
+    private func showLoading() {
+        activityIndicator.startAnimating()
+    }
+    
+    private func hideLoading() {
+        activityIndicator.stopAnimating()
+    }
 }
-
