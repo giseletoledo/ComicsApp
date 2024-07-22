@@ -116,7 +116,7 @@
                             <constraint firstItem="l8Q-UG-boo" firstAttribute="leading" secondItem="HpF-nJ-qG5" secondAttribute="leading" id="r4d-P2-528"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Favoritos" selectedImage="heart" catalog="system" id="saS-Tq-zL9">
+                    <tabBarItem key="tabBarItem" title="Favoritos" selectedImage="heart.fill" catalog="system" id="saS-Tq-zL9">
                         <imageReference key="image" image="heart.fill" catalog="system" symbolScale="medium"/>
                     </tabBarItem>
                     <connections>
@@ -162,7 +162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jep-Vj-jXU">
-                                <rect key="frame" x="209" y="236" width="51" height="35"/>
+                                <rect key="frame" x="249" y="236" width="51" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="heart" catalog="system"/>
                                 <connections>
@@ -177,17 +177,17 @@
                             <constraint firstItem="JXg-vW-Tdo" firstAttribute="top" secondItem="SB5-1b-dOA" secondAttribute="bottom" constant="8" id="NI9-k7-95p"/>
                             <constraint firstItem="SB5-1b-dOA" firstAttribute="leading" secondItem="bd8-Pf-tCa" secondAttribute="trailing" constant="16" id="QGz-e8-vqJ"/>
                             <constraint firstItem="Ls3-h9-pv6" firstAttribute="trailing" secondItem="SB5-1b-dOA" secondAttribute="trailing" constant="16" id="TJP-kz-j3g"/>
-                            <constraint firstItem="Jep-Vj-jXU" firstAttribute="leading" secondItem="bd8-Pf-tCa" secondAttribute="trailing" constant="18" id="WFv-uS-DtD"/>
+                            <constraint firstItem="Jep-Vj-jXU" firstAttribute="leading" secondItem="bd8-Pf-tCa" secondAttribute="trailing" constant="58" id="Tjw-ef-CEV"/>
                             <constraint firstItem="Ls3-h9-pv6" firstAttribute="trailing" secondItem="JXg-vW-Tdo" secondAttribute="trailing" constant="16" id="bEB-YM-q0G"/>
                             <constraint firstItem="wNS-s1-br8" firstAttribute="top" secondItem="JXg-vW-Tdo" secondAttribute="bottom" constant="16.333333333333314" id="bSW-NK-mXA"/>
                             <constraint firstItem="SB5-1b-dOA" firstAttribute="top" secondItem="Ls3-h9-pv6" secondAttribute="top" constant="32" id="c4o-qD-Qdl"/>
                             <constraint firstItem="bd8-Pf-tCa" firstAttribute="leading" secondItem="Ls3-h9-pv6" secondAttribute="leading" constant="16" id="eDS-N4-oRV"/>
                             <constraint firstItem="bd8-Pf-tCa" firstAttribute="top" secondItem="Ls3-h9-pv6" secondAttribute="top" constant="16" id="iUj-Yy-CfZ"/>
                             <constraint firstItem="Jep-Vj-jXU" firstAttribute="top" secondItem="wNS-s1-br8" secondAttribute="bottom" constant="28" id="lN8-HX-NdI"/>
-                            <constraint firstItem="Ls3-h9-pv6" firstAttribute="trailing" secondItem="Jep-Vj-jXU" secondAttribute="trailing" constant="133" id="oDi-h3-aD7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="wNS-s1-br8" secondAttribute="trailing" constant="116" id="t7K-mG-QEM"/>
                             <constraint firstItem="JXg-vW-Tdo" firstAttribute="leading" secondItem="bd8-Pf-tCa" secondAttribute="trailing" constant="16" id="v8i-3x-tY1"/>
                             <constraint firstItem="wNS-s1-br8" firstAttribute="leading" secondItem="bd8-Pf-tCa" secondAttribute="trailing" constant="16" id="xuI-Zl-9lb"/>
+                            <constraint firstItem="Ls3-h9-pv6" firstAttribute="trailing" secondItem="Jep-Vj-jXU" secondAttribute="trailing" constant="93" id="yvS-s7-iqg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="ort-i8-sdL"/>
