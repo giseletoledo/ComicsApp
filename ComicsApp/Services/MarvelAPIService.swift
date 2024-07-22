@@ -10,8 +10,8 @@ import CommonCrypto
 
 class MarvelAPIService {
     private let baseURL = "https://gateway.marvel.com/v1/public/comics"
-    private let publicKey = "75b1279a59fb505a607af9aeeefb2883"
-    private let privateKey = "28b5d399867f7e2d0e45f49bec2cfd5795c7cf85"
+    private let publicKey = ""
+    private let privateKey = ""
     
     private func currentTimestamp() -> String {
         return "\(Int(Date().timeIntervalSince1970))"
