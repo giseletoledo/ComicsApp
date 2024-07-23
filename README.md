@@ -1,6 +1,12 @@
 # Desafio Final com API
 
  O desafio tem por objetivo colocar em prática todo o conteúdo aprendido durante o curso
+
+ <p align="center">
+    <img width="20%" src="https://github.com/giseletoledo/ComicsApp/blob/main/%20ComicApp_iPhone_15_Pro_tabbar.png" alt="Tela listando comics">
+    <img width="20%" src="https://github.com/giseletoledo/ComicsApp/blob/main/ComicApp_iPhone_15_Pro_detail.png" alt="Tela detalhes do comics">
+    <img width="20%" src="https://github.com/giseletoledo/ComicsApp/blob/main/ComicApp_carregando_iPhone_15_Pro.png" alt="Tela carregando favoritos">
+</p>
  
  ### Tecnologias 
  - Swift
